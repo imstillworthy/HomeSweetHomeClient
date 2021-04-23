@@ -59,7 +59,7 @@ export default function Sell() {
                 // mode: 'cors',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ bhk, price, sqft, location, desc })
-            }).then(() => history.push('/'))
+            }).then(() => history.push('/HomeSweetHomeClient'))
                 .catch(err => {
                     console.log(err);
                 })
