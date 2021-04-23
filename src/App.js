@@ -137,7 +137,7 @@ function App() {
                     margin: 'auto'
                   }}
                 >
-                  <Loader type="Puff" color="#2BAD60" height="100" width="100" />
+                  <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
                 </div>
               </div>
             </>
