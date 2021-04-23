@@ -93,16 +93,16 @@ function App() {
           user ? (
             <Layout>
               <Switch>
-                <Route exact path="/">
+                <Route exact path="/HomeSweetHomeClient">
                   <Main />
                 </Route>
-                <Route path="/predict">
+                <Route path="/HomeSweetHomeClient/predict">
                   <Predit />
                 </Route>
-                <Route path="/about">
+                <Route path="/HomeSweetHomeClient/about">
                   <About />
                 </Route>
-                <Route path="/sell">
+                <Route path="/HomeSweetHomeClient/sell">
                   <Sell />
                 </Route>
               </Switch>
