@@ -8,9 +8,10 @@ import About from './pages/About';
 import Sell from './pages/Sell';
 import fire from './fire'
 import Login from './pages/login'
+import Loader from 'react-loader-spinner';
 
 function App() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -88,37 +89,59 @@ function App() {
   return (
     <div>
       <Router>
-      {user?(
-        <Layout>
-          <Switch>
-            <Route exact path="/">
-              <Main />
-            </Route>
-            <Route path="/predict">
-              <Predit />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/sell">
-              <Sell />
-            </Route>
-          </Switch>
-        </Layout>
-      ):(
-        <Login
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            handleLogin={handleLogin}
-            handleSignup={handleSignup}
-            hasAccount={hasAccount}
-            setHasAccount={setHasAccount}
-            emailError={emailError}
-            passwordError={passwordError}
-          />
-        )}
+        {
+          user ? (
+            <Layout>
+              <Switch>
+                <Route exact path="/">
+                  <Main />
+                </Route>
+                <Route path="/predict">
+                  <Predit />
+                </Route>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/sell">
+                  <Sell />
+                </Route>
+              </Switch>
+            </Layout>
+          ) : user === '' ? (
+            <Login
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+              handleLogin={handleLogin}
+              handleSignup={handleSignup}
+              hasAccount={hasAccount}
+              setHasAccount={setHasAccount}
+              emailError={emailError}
+              passwordError={passwordError}
+            />
+          ) : (
+            <>
+              <div
+                style={{
+                  // width: "100%",
+                  // height: "100%",
+                  position: 'relative'
+                }}
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    margin: 'auto'
+                  }}
+                >
+                  <Loader type="Puff" color="#2BAD60" height="100" width="100" />
+                </div>
+              </div>
+            </>
+          )}
       </Router>
     </div>
   );

@@ -11,6 +11,11 @@ import { createApi } from "unsplash-js";
 import Grid from '@material-ui/core/Grid';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+var ENDPOINT = "http://127.0.0.1:5000/";
+
+// if (true || process.env.NODE_ENV === "production") {
+//     ENDPOINT = `https://homes-sweet-homes.herokuapp.com/`
+// }
 
 const api = createApi({
     accessKey: "_catYkCR4QcAID3tsjcibN0MCaxrGmfTN-evnRwCH8o"
@@ -38,9 +43,9 @@ const Main = () => {
     const [urls, setUrls] = useState([])
     const [housedata, setHousedata] = useState([])
     useEffect(() => {
-        fetch('http://127.0.0.1:5000/getproperty', {
+        fetch(`https://ho-m-ify.herokuapp.com/getproperty`, {
             method: 'GET',
-            mode: 'cors',
+            // mode: 'cors',
         }).then(res => res.json())
             .then(data => {
                 setHousedata(data)
@@ -95,10 +100,7 @@ const Main = () => {
                                                             </CardActionArea>
                                                             <CardActions>
                                                                 <Button size="small" color="primary">
-                                                                    Share
-                                                    </Button>
-                                                                <Button size="small" color="primary">
-                                                                    Details
+                                                                    Buy
                                                     </Button>
                                                             </CardActions>
                                                         </Card>

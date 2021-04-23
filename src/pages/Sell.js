@@ -6,7 +6,11 @@ import { makeStyles } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import { useHistory } from 'react-router-dom'
 
+var ENDPOINT = "http://127.0.0.1:5000/";
 
+// if (true || process.env.NODE_ENV === "production") {
+//     ENDPOINT = `https://homes-sweet-homes.herokuapp.com/`
+// }
 
 const useStyles = makeStyles((theme) => ({
     field: {
@@ -50,9 +54,9 @@ export default function Sell() {
         }
 
         if (bhk > 0 && sqft > 0 && location !== '' && price > 0) {
-            fetch('http://127.0.0.1:5000/sell', {
+            fetch(`https://ho-m-ify.herokuapp.com/sell`, {
                 method: 'POST',
-                mode: 'cors',
+                // mode: 'cors',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ bhk, price, sqft, location, desc })
             }).then(() => history.push('/'))

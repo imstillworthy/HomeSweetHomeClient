@@ -27,11 +27,17 @@ const drawerWidth = 220;
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        // flexDirection:'column'
+        // flexGrow: 1,
+        // backgroundImage: `url(${backimg})`,
+        // minHeight: "100vh",
+        // backgroundRepeat: "no-repeat",
+        // backgroundPosition: "center center",
+        // backgroundSize: "cover",
+        // backgroundAttachment: "fixed",
     },
     btn: {
-        width: 100,
-        position: 'absolute',
-        right: 5
+        width: 100
     },
     drawer: {
         [theme.breakpoints.up('sm')]: {
@@ -49,9 +55,7 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
     },
     menuButton: {
-        width:'10px',
         marginRight: theme.spacing(2),
-        marginLeft:theme.spacing(2),
         [theme.breakpoints.up('sm')]: {
             display: 'none',
         },
@@ -88,7 +92,7 @@ function ResponsiveDrawer({ children }) {
     theme1 = responsiveFontSizes(theme1);
     const drawer = (
         <div>
-            <div className={classes.toolbar}>
+            <div>
                 <ThemeProvider theme={theme1}>
                     <Typography variant="h5" color="primary" className={classes.title}>
                         Bengaluru Properties
@@ -127,15 +131,6 @@ function ResponsiveDrawer({ children }) {
         <div className={`hero ${classes.root}`}>
             <CssBaseline />
             <AppBar position="fixed" color="primary" className={classes.appBar}>
-                {/* <IconButton
-                    color="inherit"
-                    aria-label="open drawer"
-                    edge="start"
-                    onClick={handleDrawerToggle}
-                    className={classes.menuButton}
-                >
-                    <MenuIcon />
-                </IconButton> */}
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -147,8 +142,8 @@ function ResponsiveDrawer({ children }) {
                         <MenuIcon />
                     </IconButton>
                     <ThemeProvider theme={theme1}>
-                        <Typography variant="h4" noWrap   >
-                            HOMEPROS
+                        <Typography variant="h3" className={classes.mainHeading}>
+                            HOME SWEET HOME
                         </Typography>
                     </ThemeProvider>
                     <Button color="inherit" onClick={handleLogOut} className={classes.btn}>Logout</Button>
