@@ -97,25 +97,25 @@ function ResponsiveDrawer({ children }) {
                 <Divider />
             </div>
             <List>
-                <ListItem button onClick={() => history.push('/')}>
+                <ListItem button onClick={() => history.push('/HomeSweetHomeClient')}>
                     <ListItemIcon><HouseIcon color="secondary" /></ListItemIcon>
                     <ListItemText primary='For Sale' />
                 </ListItem>
             </List>
             <List>
-                <ListItem button onClick={() => history.push('/predict')}>
+                <ListItem button onClick={() => history.push('/HomeSweetHomeClient/predict')}>
                     <ListItemIcon><CropIcon color="secondary" /></ListItemIcon>
                     <ListItemText primary='Predict Price' />
                 </ListItem>
             </List>
             <List>
-                <ListItem button onClick={() => history.push('/sell')}>
+                <ListItem button onClick={() => history.push('/HomeSweetHomeClient/sell')}>
                     <ListItemIcon><AddCircleOutlineIcon color="secondary" /></ListItemIcon>
                     <ListItemText primary='Sell' />
                 </ListItem>
             </List>
             <List>
-                <ListItem button onClick={() => history.push('/about')}>
+                <ListItem button onClick={() => history.push('/HomeSweetHomeClient/about')}>
                     <ListItemIcon><InfoIcon color="secondary" /></ListItemIcon>
                     <ListItemText primary='About Us' />
                 </ListItem>
